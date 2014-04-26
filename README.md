@@ -1,6 +1,6 @@
 # Tiger
 
-TODO: Write a gem description
+Tiger is a mixin class to on/emit triggers (or hooks) that get called at some points you specify.
 
 ## Installation
 
@@ -18,11 +18,11 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+see `test/test_tiger.rb`
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/tiger/fork )
+1. Fork it ( http://github.com/hisaichi5518/tiger-rb/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
