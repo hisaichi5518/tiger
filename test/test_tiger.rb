@@ -27,16 +27,20 @@ class TestTriger < MiniTest::Unit::TestCase
 
   def test_emit
     test_tiger_class = ::TestTrigerClass.new
+    ::TestTrigerClass.on :test_emit do |args|
+      args[:count] += 1
+    end
     test_tiger_class.on :test_emit do |args|
       args[:count] += 1
     end
 
     args = {count: 0}
     assert_equal args[:count], 0
-
     test_tiger_class.emit(:test_emit, args)
-
     assert_equal args[:count], 1
+
+    ::TestTrigerClass.emit(:test_emit, args)
+    assert_equal args[:count], 2
   end
 
   def test_all_triggers

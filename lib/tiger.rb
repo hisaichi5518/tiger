@@ -19,8 +19,8 @@ module Tiger
 
   def emit_all(name, *args)
     triggers = all_triggers[name] || []
-    triggers.each do |proc|
-      proc.call(*args)
+    triggers.each do |code|
+      self.instance_exec(*args, &code)
     end
   end
 end
