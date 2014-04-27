@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Tiger::VERSION
   spec.authors       = ["hisaichi5518"]
   spec.email         = ["hisaichi5518@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Tiger is a mixin class to on/emit triggers (or hooks) that get called at some points you specify.}
+  spec.description   = %q{Tiger is a mixin class to on/emit triggers (or hooks) that get called at some points you specify.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
