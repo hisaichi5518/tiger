@@ -11,7 +11,7 @@ module TestTrigerModule
 end
 
 class TestTriger < MiniTest::Unit::TestCase
-  def test_on
+  def test_class_on
     test_tiger_class = ::TestTrigerClass.new
 
     assert test_tiger_class.triggers[:test].nil?
@@ -25,7 +25,7 @@ class TestTriger < MiniTest::Unit::TestCase
     assert_equal test_tiger_class.triggers[:test_on].size, 1
   end
 
-  def test_emit
+  def test_class_emit
     test_tiger_class = ::TestTrigerClass.new
     ::TestTrigerClass.on :test_emit do |args|
       args[:count] += 1
@@ -43,7 +43,7 @@ class TestTriger < MiniTest::Unit::TestCase
     assert_equal args[:count], 2
   end
 
-  def test_all_triggers
+  def test_class_all_triggers
     test_tiger_class = ::TestTrigerClass.new
 
     assert test_tiger_class.all_triggers[:test_all_triggers].nil?
@@ -58,7 +58,7 @@ class TestTriger < MiniTest::Unit::TestCase
     assert_equal test_tiger_class.all_triggers[:test_all_triggers].size, 2
   end
 
-  def test_emit_all
+  def test_class_emit_all
     test_tiger_class = ::TestTrigerClass.new
     ::TestTrigerClass.on :test_emit_all do |args|
       args[:count] += 1
