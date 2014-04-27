@@ -25,6 +25,16 @@ class TestTiger < MiniTest::Unit::TestCase
     assert_equal test_tiger_class.triggers[:test_on].size, 1
   end
 
+  def test_module_on
+    ::TestTigerModule.triggers ||= {}
+    assert ::TestTigerModule.triggers[:test_on].nil?
+
+    ::TestTigerModule.on :test_on do
+    end
+
+    assert_equal ::TestTigerModule.triggers[:test_on].size, 1
+  end
+
   def test_class_emit
     test_tiger_class = ::TestTigerClass.new
     ::TestTigerClass.on :test_emit do |args|
@@ -45,6 +55,20 @@ class TestTiger < MiniTest::Unit::TestCase
     ::TestTigerClass.emit(:test_emit, args)
     assert_equal args[:count], 2
     assert_equal args[:self], TestTigerClass
+  end
+
+  def test_moudle_emit
+    ::TestTigerModule.on :test_emit do |args|
+      args[:count] += 1
+      args[:self]   = self
+    end
+
+    args = {count: 0}
+    assert_equal args[:count], 0
+
+    ::TestTigerModule.emit(:test_emit, args)
+    assert_equal args[:count], 1
+    assert_equal args[:self], TestTigerModule
   end
 
   def test_class_all_triggers
