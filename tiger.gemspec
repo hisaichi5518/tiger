@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["hisaichi5518@gmail.com"]
   spec.summary       = %q{Tiger is a mixin class to on/emit triggers (or hooks) that get called at some points you specify.}
   spec.description   = %q{Tiger is a mixin class to on/emit triggers (or hooks) that get called at some points you specify.}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/hisaichi5518/tiger"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
